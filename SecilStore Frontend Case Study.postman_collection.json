@@ -1,0 +1,730 @@
+{
+	"info": {
+		"_postman_id": "fd72aaef-9361-45e6-8cd2-eb4b9d1068fa",
+		"name": "SecilStore Frontend Case Study",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5905656"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "YOUR_SECRET_TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": null,\n  \"password\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://maestro-api-dev.secil.biz/Auth/Login",
+							"protocol": "https",
+							"host": [
+								"maestro-api-dev",
+								"secil",
+								"biz"
+							],
+							"path": [
+								"Auth",
+								"Login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "YOUR_SECRET_TOKEN"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"frontendtask@secilstore.com\",\n  \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://maestro-api-dev.secil.biz/Auth/Login",
+									"protocol": "https",
+									"host": [
+										"maestro-api-dev",
+										"secil",
+										"biz"
+									],
+									"path": [
+										"Auth",
+										"Login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Jan 2025 11:46:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Served-By",
+									"value": "maestro-api-dev.secil.biz"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=aYNkcIjIQ35ZSs3I5NLQLTp%2F%2BSGERSqpY5CGR0RCIJqktEJytQf%2Fp9uc4eJK5HJcdtOhKVdKRYsVGE2Ss81PK6YQzpIzYR1gJ74qL3jLhUIiQ0gDgOPVvm3uxOMehrB1fe2Pz3dtIar1hmuJ\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "90678a6ce948bbfd-FRA"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "server-timing",
+									"value": "cfL4;desc=\"?proto=TCP&rtt=79929&min_rtt=74939&rtt_var=29833&sent=5&recv=5&lost=0&retrans=0&sent_bytes=2801&recv_bytes=983&delivery_rate=41501&cwnd=249&unsent_bytes=0&cid=e9ce8d7ddaa11465&ts=320&x=0\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": null,\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXM2FoRC1EZE95VHhOYWRud3R2SjZjQk9wSUsxc0x0QjVhQTlvaElUZVprIn0.eyJleHAiOjE3Mzc2NjE1NjAsImlhdCI6MTczNzYzMjc2MCwianRpIjoiYTg2NzgyNzYtOTE5MC00ZDA5LTllYmMtZmJmNTYwNzI3Y2M5IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjM0NDRhYjMxLWY1NTEtNDFiOC04NGMxLTM0OWViNDBjZTAyOSIsInR5cCI6IkJlYXJlciIsImF6cCI6InNlY2lsc3RvcmUiLCJzaWQiOiI0MDdkNmIwOS00MjM2LTQyOWUtOTJjNy1jYTUwOWUyOWI3OTgiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJGcm9udGVuZCBEZXZlbG9wZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJmcm9udGVuZHRhc2tAc2VjaWxzdG9yZS5jb20iLCJnaXZlbl9uYW1lIjoiRnJvbnRlbmQiLCJmYW1pbHlfbmFtZSI6IkRldmVsb3BlciIsImVtYWlsIjoiZnJvbnRlbmR0YXNrQHNlY2lsc3RvcmUuY29tIn0.cVXAVMMoxy70pdm5QQyT94_E6J0DmLjZLHVqY9NXTCRwtuXFvKOgeIVSequK7JFGIv5QmdeJTRBdpL6d8N8MiTa-IXBAW-ZQaeYjKm5HT5PTMmgJgISZdXy8DnK6j7kUJ8lQs-3LE_LDITFCMqnQndP6oERTECcRmiC1J1PwF_s8I2pNFRmkZOzRXS-fC9FnklEgYka9R_hBxkOo--GX61m1mRaJDoIH67DTCFmTOjWjenGfc6sOIWp1CeKfXHEypnoNxVnjPRBzL4EJJkXrteczuZAVWjpSSjUtozXjlnfgngq4UQEhoqD2XV06F_a54oDXW3F561iaJFR5iJGIHg\",\n        \"expiresIn\": 28800,\n        \"refreshExpiresIn\": 36000,\n        \"refreshToken\": \"eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyZjExNjc5Ni0wYmMxLTRhOTgtODE0YS1lOTJiMjQxNDY1Y2UifQ.eyJleHAiOjE3Mzc2Njg3NjAsImlhdCI6MTczNzYzMjc2MCwianRpIjoiMGRlMDE4OWMtNzk4ZC00MTgzLWI4NzItN2RhYWU3NTFhMWM5IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwiYXVkIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwic3ViIjoiMzQ0NGFiMzEtZjU1MS00MWI4LTg0YzEtMzQ5ZWI0MGNlMDI5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6InNlY2lsc3RvcmUiLCJzaWQiOiI0MDdkNmIwOS00MjM2LTQyOWUtOTJjNy1jYTUwOWUyOWI3OTgiLCJzY29wZSI6Im9wZW5pZCBhY3Igcm9sZXMgZW1haWwgcHJvZmlsZSB3ZWItb3JpZ2lucyBiYXNpYyJ9.6aGxFwr_IXpKDcKXM8FrNqmBJo4j_AGCVPD9DGwCY5230-4t0Ryf3l8zkAqPvI9dRjnBUezK1WzGhzhOUxl8RA\",\n        \"tokenType\": \"Bearer\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login with Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "YOUR_SECRET_TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refreshToken\": \"{refreshtoken}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://maestro-api-dev.secil.biz/Auth/RefreshTokenLogin",
+							"protocol": "https",
+							"host": [
+								"maestro-api-dev",
+								"secil",
+								"biz"
+							],
+							"path": [
+								"Auth",
+								"RefreshTokenLogin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "YOUR_SECRET_TOKEN"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyZjExNjc5Ni0wYmMxLTRhOTgtODE0YS1lOTJiMjQxNDY1Y2UifQ.eyJleHAiOjE3Mzc2Njg3NjAsImlhdCI6MTczNzYzMjc2MCwianRpIjoiMGRlMDE4OWMtNzk4ZC00MTgzLWI4NzItN2RhYWU3NTFhMWM5IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwiYXVkIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwic3ViIjoiMzQ0NGFiMzEtZjU1MS00MWI4LTg0YzEtMzQ5ZWI0MGNlMDI5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6InNlY2lsc3RvcmUiLCJzaWQiOiI0MDdkNmIwOS00MjM2LTQyOWUtOTJjNy1jYTUwOWUyOWI3OTgiLCJzY29wZSI6Im9wZW5pZCBhY3Igcm9sZXMgZW1haWwgcHJvZmlsZSB3ZWItb3JpZ2lucyBiYXNpYyJ9.6aGxFwr_IXpKDcKXM8FrNqmBJo4j_AGCVPD9DGwCY5230-4t0Ryf3l8zkAqPvI9dRjnBUezK1WzGhzhOUxl8RA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://maestro-api-dev.secil.biz/Auth/RefreshTokenLogin",
+									"protocol": "https",
+									"host": [
+										"maestro-api-dev",
+										"secil",
+										"biz"
+									],
+									"path": [
+										"Auth",
+										"RefreshTokenLogin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 23 Jan 2025 11:47:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Served-By",
+									"value": "maestro-api-dev.secil.biz"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=aLS2%2F%2FDU%2FdnrJKQ8wmZJpK6%2BtVrDKFmnhMNI0LsATWSScnPW7WBPjHWtcmGhyOi2nVZ5NiCLtQ4twXRsYi7l194DpcguNf%2BEMc0u1U7PFXzl4pDjxSuuIIcEOxpDNmDwablzhNoFBHX1YOBN\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "90678cdc3a329226-FRA"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "server-timing",
+									"value": "cfL4;desc=\"?proto=TCP&rtt=131923&min_rtt=92707&rtt_var=113197&sent=7&recv=7&lost=0&retrans=1&sent_bytes=2900&recv_bytes=1603&delivery_rate=13304&cwnd=210&unsent_bytes=0&cid=cedee8374ed029ca&ts=525&x=0\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 0,\n    \"message\": null,\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXM2FoRC1EZE95VHhOYWRud3R2SjZjQk9wSUsxc0x0QjVhQTlvaElUZVprIn0.eyJleHAiOjE3Mzc2NjE2NTksImlhdCI6MTczNzYzMjg1OSwianRpIjoiOWU0MGM1YjMtNzdhMS00NTE3LWI0OGYtZDBiZjg2ZjNhNDU1IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjM0NDRhYjMxLWY1NTEtNDFiOC04NGMxLTM0OWViNDBjZTAyOSIsInR5cCI6IkJlYXJlciIsImF6cCI6InNlY2lsc3RvcmUiLCJzaWQiOiI0MDdkNmIwOS00MjM2LTQyOWUtOTJjNy1jYTUwOWUyOWI3OTgiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJGcm9udGVuZCBEZXZlbG9wZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJmcm9udGVuZHRhc2tAc2VjaWxzdG9yZS5jb20iLCJnaXZlbl9uYW1lIjoiRnJvbnRlbmQiLCJmYW1pbHlfbmFtZSI6IkRldmVsb3BlciIsImVtYWlsIjoiZnJvbnRlbmR0YXNrQHNlY2lsc3RvcmUuY29tIn0.aRMyNzqQ0s--fpSTUnFsBscUvCBSqQKa99Z2H1RzWLJZHZda4CIHBCgC0DkqpjEZJXzQKZHJhRMLqZR9381wFkCJl_6hJ35soYogpGnxGuTJcBEf-2HJeoy7lGbFwaQc6UQLzXzC3WuNbWGAluVaWEHP6lVHk7j9JyERay2q_4Ub6xkryaYHfX6zq9LeIQpj3bh0mhD4orysb0heckMxD7WUx1GjrFsqIfi-J75FKaDKQ4jFpjIKB3UWbqBjG4CgEsQPuuuK81R97YLei0plB3NVvMhfmXRtW7EWixwCErohslWWNHhBXTK9LZskhxvJHrCNrz2m2mYjIqK3dKdDug\",\n        \"expiresIn\": 28800,\n        \"refreshExpiresIn\": 36000,\n        \"refreshToken\": \"eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyZjExNjc5Ni0wYmMxLTRhOTgtODE0YS1lOTJiMjQxNDY1Y2UifQ.eyJleHAiOjE3Mzc2Njg4NTksImlhdCI6MTczNzYzMjg1OSwianRpIjoiY2Q5Zjg2YzgtMWIxNC00OWJiLWJhMTYtMGI3ODdmYzBiNmM5IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwiYXVkIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwic3ViIjoiMzQ0NGFiMzEtZjU1MS00MWI4LTg0YzEtMzQ5ZWI0MGNlMDI5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6InNlY2lsc3RvcmUiLCJzaWQiOiI0MDdkNmIwOS00MjM2LTQyOWUtOTJjNy1jYTUwOWUyOWI3OTgiLCJzY29wZSI6Im9wZW5pZCBhY3Igcm9sZXMgZW1haWwgcHJvZmlsZSB3ZWItb3JpZ2lucyBiYXNpYyJ9.iJeXjmSrf7xCqd1D_5-jp-TgLp9Buj-ysagT-rq8OsH61vQv8JaIlIo3NZB34_ucTXNEtC0hh8fcmTJD6kQpAA\",\n        \"tokenType\": \"Bearer\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Collections",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://maestro-api-dev.secil.biz/Collection/GetAll",
+									"protocol": "https",
+									"host": [
+										"maestro-api-dev",
+										"secil",
+										"biz"
+									],
+									"path": [
+										"Collection",
+										"GetAll"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 27 Jan 2025 09:37:06 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Served-By",
+									"value": "maestro-api-dev.secil.biz"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=pjvKK0Wtl%2BsS%2BZHNwDxlmRJZlz1rGsx9IwCz29%2FOqT0iC1Cym6JhE%2FdUEVhfgTEUYHZWhp21tVWryhhjZbYhEXHrdIxP5t160ZQobY3uoaT9syeP%2BHKTtmFXD8IjgmrViBecGptuCJvAH8FN\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "9087c3198fb69e91-CDG"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "server-timing",
+									"value": "cfL4;desc=\"?proto=TCP&rtt=73376&min_rtt=65923&rtt_var=24664&sent=25&recv=24&lost=0&retrans=0&sent_bytes=5432&recv_bytes=2404&delivery_rate=58503&cwnd=41&unsent_bytes=0&cid=eb5a25ed12009bba&ts=18254&x=0\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"page\": 1,\n        \"pageSize\": 10,\n        \"totalCount\": 21,\n        \"totalPages\": 3,\n        \"hasPreviousPage\": false,\n        \"hasNextPage\": true\n    },\n    \"data\": [\n        {\n            \"id\": 45,\n            \"filters\": {\n                \"useOrLogic\": true,\n                \"filters\": [\n                    {\n                        \"id\": \"color\",\n                        \"title\": \"Renk\",\n                        \"value\": \"0002\",\n                        \"valueName\": \"Mor\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    }\n                ]\n            },\n            \"type\": 1,\n            \"info\": {\n                \"id\": 68,\n                \"name\": \"Can stayling\",\n                \"description\": \"<p>profesyonel stayling uzmanı1</p>\",\n                \"url\": \"can-stayling\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 2,\n            \"products\": null\n        },\n        {\n            \"id\": 67,\n            \"filters\": {\n                \"useOrLogic\": true,\n                \"filters\": [\n                    {\n                        \"id\": \"color\",\n                        \"title\": \"Renk\",\n                        \"value\": \"0005\",\n                        \"valueName\": \"Sarı\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    }\n                ]\n            },\n            \"type\": 1,\n            \"info\": {\n                \"id\": 93,\n                \"name\": \"collection test\",\n                \"description\": \"<p>collection testting</p>\",\n                \"url\": \"collection-test\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 1,\n            \"products\": null\n        },\n        {\n            \"id\": 41,\n            \"filters\": {\n                \"useOrLogic\": false,\n                \"filters\": [\n                    {\n                        \"id\": \"category\",\n                        \"title\": \"Kategori\",\n                        \"value\": \"1000300516\",\n                        \"valueName\": \"Etek\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    },\n                    {\n                        \"id\": \"category\",\n                        \"title\": \"Kategori\",\n                        \"value\": \"1000300118\",\n                        \"valueName\": \"Bluz\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    }\n                ]\n            },\n            \"type\": 1,\n            \"info\": {\n                \"id\": 63,\n                \"name\": \"Etek&Bluz\",\n                \"description\": \"<p>En güzel etek ve bluzlar</p>\",\n                \"url\": \"etekbluz\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 4,\n            \"products\": null\n        },\n        {\n            \"id\": 37,\n            \"filters\": {\n                \"useOrLogic\": true,\n                \"filters\": [\n                    {\n                        \"id\": \"3\",\n                        \"title\": \"ETİKET MARKASI\",\n                        \"value\": \"0000300014\",\n                        \"valueName\": \"Gala-Xi\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    }\n                ]\n            },\n            \"type\": 1,\n            \"info\": {\n                \"id\": 58,\n                \"name\": \"Galaxi\",\n                \"description\": \"<p>Büyük Beden Stiller</p>\",\n                \"url\": \"galaxi\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 4,\n            \"products\": null\n        },\n        {\n            \"id\": 21,\n            \"filters\": {\n                \"useOrLogic\": true,\n                \"filters\": [\n                    {\n                        \"id\": \"color\",\n                        \"title\": \"Renk\",\n                        \"value\": \"0002\",\n                        \"valueName\": \"Mor\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    }\n                ]\n            },\n            \"type\": 1,\n            \"info\": {\n                \"id\": 28,\n                \"name\": \"Hasan'ın Seçtikleri\",\n                \"description\": \"<p>Deneme<strong> Test</strong></p>\",\n                \"url\": \"hasanin-sectikleri\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 1,\n            \"products\": null\n        },\n        {\n            \"id\": 35,\n            \"filters\": {\n                \"useOrLogic\": true,\n                \"filters\": [\n                    {\n                        \"id\": \"3\",\n                        \"title\": \"ETİKET MARKASI\",\n                        \"value\": \"0000300016\",\n                        \"valueName\": \"Ilmio\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    }\n                ]\n            },\n            \"type\": 1,\n            \"info\": {\n                \"id\": 56,\n                \"name\": \"İlmio\",\n                \"description\": \"<p>minumum 50 karakter girilmelidir</p>\",\n                \"url\": \"ilmio\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 4,\n            \"products\": null\n        },\n        {\n            \"id\": 39,\n            \"filters\": {\n                \"useOrLogic\": true,\n                \"filters\": [\n                    {\n                        \"id\": \"3\",\n                        \"title\": \"ETİKET MARKASI\",\n                        \"value\": \"0000300017\",\n                        \"valueName\": \"Ilmio Cocktail\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    },\n                    {\n                        \"id\": \"color\",\n                        \"title\": \"Renk\",\n                        \"value\": \"0008\",\n                        \"valueName\": \"Siyah\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    }\n                ]\n            },\n            \"type\": 1,\n            \"info\": {\n                \"id\": 60,\n                \"name\": \"Ilmio Kokteyl\",\n                \"description\": \"<p>Ilmio Kokteyl ve Parti Elbiseleri</p>\",\n                \"url\": \"ilmio-kokteyl\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 4,\n            \"products\": null\n        },\n        {\n            \"id\": 26,\n            \"filters\": {\n                \"useOrLogic\": true,\n                \"filters\": [\n                    {\n                        \"id\": \"tag\",\n                        \"title\": \"Etiket\",\n                        \"value\": \"000000202\",\n                        \"valueName\": \"%20 İndirim Deneme\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    },\n                    {\n                        \"id\": \"color\",\n                        \"title\": \"Renk\",\n                        \"value\": \"0000\",\n                        \"valueName\": \"Mavi\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    },\n                    {\n                        \"id\": \"color\",\n                        \"title\": \"Renk\",\n                        \"value\": \"0008\",\n                        \"valueName\": \"Siyah\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    },\n                    {\n                        \"id\": \"color\",\n                        \"title\": \"Renk\",\n                        \"value\": \"0009\",\n                        \"valueName\": \"Kırmızı\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    },\n                    {\n                        \"id\": \"3\",\n                        \"title\": \"ETİKET MARKASI\",\n                        \"value\": \"0000300010\",\n                        \"valueName\": \"Seçil\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    }\n                ]\n            },\n            \"type\": 1,\n            \"info\": {\n                \"id\": 33,\n                \"name\": \"Kış Sezonu\",\n                \"description\": \"<p>Deneme</p>\",\n                \"url\": \"kis-sezonu\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 1,\n            \"products\": null\n        },\n        {\n            \"id\": 51,\n            \"filters\": {\n                \"useOrLogic\": false,\n                \"filters\": null\n            },\n            \"type\": 0,\n            \"info\": {\n                \"id\": 77,\n                \"name\": \"Manuel koleksiyon\",\n                \"description\": \"<p>adsawdadsawd</p>\",\n                \"url\": \"manuel-koleksiyon\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 4,\n            \"products\": [\n                {\n                    \"productCode\": \"10002421211006\",\n                    \"colorCode\": null,\n                    \"name\": \"Çift Kumaşlı Uzun Kollu Gömlek\",\n                    \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421211006/0015/1.webp?x=kyvrb\"\n                }\n            ]\n        },\n        {\n            \"id\": 46,\n            \"filters\": {\n                \"useOrLogic\": true,\n                \"filters\": [\n                    {\n                        \"id\": \"color\",\n                        \"title\": \"Renk\",\n                        \"value\": \"0009\",\n                        \"valueName\": \"Kırmızı\",\n                        \"currency\": null,\n                        \"comparisonType\": 0\n                    }\n                ]\n            },\n            \"type\": 1,\n            \"info\": {\n                \"id\": 69,\n                \"name\": \"Ord. Can sıtayling\",\n                \"description\": \"<p>ord. prof. Can - sıtayling </p>\",\n                \"url\": \"ord-can-sitayling\",\n                \"langCode\": \"tr-TR\"\n            },\n            \"salesChannelId\": 1,\n            \"products\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GetProducts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXM2FoRC1EZE95VHhOYWRud3R2SjZjQk9wSUsxc0x0QjVhQTlvaElUZVprIn0.eyJleHAiOjE3Mzc5OTk0MDgsImlhdCI6MTczNzk3MDYwOCwianRpIjoiYTNkMTk3MWYtMmE2MC00NzMxLWEyNGQtM2FkMDg3YTk3Y2IyIiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjM0NDRhYjMxLWY1NTEtNDFiOC04NGMxLTM0OWViNDBjZTAyOSIsInR5cCI6IkJlYXJlciIsImF6cCI6InNlY2lsc3RvcmUiLCJzaWQiOiIxMGUxNDIwNi02NDk3LTQzY2QtODZiOS00MjlmNjJiOTAwNzkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJGcm9udGVuZCBEZXZlbG9wZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJmcm9udGVuZHRhc2tAc2VjaWxzdG9yZS5jb20iLCJnaXZlbl9uYW1lIjoiRnJvbnRlbmQiLCJmYW1pbHlfbmFtZSI6IkRldmVsb3BlciIsImVtYWlsIjoiZnJvbnRlbmR0YXNrQHNlY2lsc3RvcmUuY29tIn0.jl89NGzwy4l8ygMFJB1U49w_ncxeVSfQfO8YiM1bEMMXd52QRFzES7NZnIFMb8eTlbR4UbYQEEXhgVOVdvucNJhGGj4GV_ck8IO6eROkq4orijyNZHpFRWNZduDs5d1AR2B5xd8jyrpnYt_cHsy1Xgn_rwsM95bd4_CSQB_1G_JcEnEkSd9nQm12DZjhRW8PJlAUtqA92omvjM0eZkrwietEbaYdgmNKYs1Owcfl2eSDS8eALd2cst_GCOCu0MO1PRduqaOEgcZ5MbdjtROdJnSmdQxuSxdpHqK4-3IPGbFk07CuoPdoNWFHpMEUsE01I8m7W3fC4efpvvg6UMRr2w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"additionalFilters\": [\r\n  ],\r\n  \"page\": 1,\r\n  \"pageSize\": 36\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://maestro-api-dev.secil.biz/Collection/72/GetProductsForConstants",
+							"protocol": "https",
+							"host": [
+								"maestro-api-dev",
+								"secil",
+								"biz"
+							],
+							"path": [
+								"Collection",
+								"72",
+								"GetProductsForConstants"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"additionalFilters\": [\r\n  ],\r\n  \"page\": 1,\r\n  \"pageSize\": 36\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://maestro-api-dev.secil.biz/Collection/72/GetProductsForConstants",
+									"protocol": "https",
+									"host": [
+										"maestro-api-dev",
+										"secil",
+										"biz"
+									],
+									"path": [
+										"Collection",
+										"72",
+										"GetProductsForConstants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 27 Jan 2025 10:54:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Served-By",
+									"value": "maestro-api-dev.secil.biz"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=FTt36lc1fqgBDsPtT%2BeT9lnBAbCF38CmfjrxIsDgwrgDtQvDKtzVwA1xFbYpWPgQTcQI8ukKmWf0pVLQDI6lkblMVPjcbf2GJMBixEHa10%2FGdRO%2FSee93BA9IQTs%2Bng7LQ8twvwtcCTPjvrl\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "908834fb0d2b6ab7-CDG"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "server-timing",
+									"value": "cfL4;desc=\"?proto=TCP&rtt=95887&min_rtt=72062&rtt_var=43663&sent=37&recv=36&lost=0&retrans=0&sent_bytes=5562&recv_bytes=5298&delivery_rate=48359&cwnd=38&unsent_bytes=0&cid=0a75f43a5c0f1ed3&ts=28092&x=0\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Başarılı\",\n    \"data\": {\n        \"meta\": {\n            \"page\": 1,\n            \"pageSize\": 36,\n            \"totalProduct\": 644\n        },\n        \"data\": [\n            {\n                \"productCode\": \"10002421010027\",\n                \"colorCode\": \"0317\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421010027/0317/1.webp?x=yqjjz\"\n            },\n            {\n                \"productCode\": \"10002421011001\",\n                \"colorCode\": \"0037\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421011001/0037/1.webp?x=rsrlc\"\n            },\n            {\n                \"productCode\": \"10002421011012\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421011012/0008/1.webp?x=tdzfz\"\n            },\n            {\n                \"productCode\": \"10002421011014\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421011014/0008/1.webp?x=lccrl\"\n            },\n            {\n                \"productCode\": \"10002421014003\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014003/0008/1.webp?x=plrqn\"\n            },\n            {\n                \"productCode\": \"10002421014003\",\n                \"colorCode\": \"0045\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014003/0045/1.webp?x=prjhu\"\n            },\n            {\n                \"productCode\": \"10002421014004\",\n                \"colorCode\": \"0054\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014004/0054/1.webp?x=pcqsy\"\n            },\n            {\n                \"productCode\": \"10002421014007\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014007/0008/1.webp?x=vczru\"\n            },\n            {\n                \"productCode\": \"10002421014009\",\n                \"colorCode\": \"0037\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014009/0037/1.webp?x=wdlvt\"\n            },\n            {\n                \"productCode\": \"10002421110002\",\n                \"colorCode\": \"0045\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421110002/0045/1.webp?x=fggki\"\n            },\n            {\n                \"productCode\": \"10002421110012\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421110012/0008/1.webp?x=muzto\"\n            },\n            {\n                \"productCode\": \"10002421111017\",\n                \"colorCode\": \"0000\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421111017/0000/1.webp?x=ujwkw\"\n            },\n            {\n                \"productCode\": \"10002421211006\",\n                \"colorCode\": \"0015\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421211006/0015/1.webp?x=kyvrb\"\n            },\n            {\n                \"productCode\": \"10002421211014\",\n                \"colorCode\": \"0045\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421211014/0045/1.webp?x=qgqji\"\n            },\n            {\n                \"productCode\": \"10002421214001\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421214001/0008/1.webp?x=jdfpa\"\n            },\n            {\n                \"productCode\": \"10002421310002\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421310002/0008/1.webp?x=rwldh\"\n            },\n            {\n                \"productCode\": \"10002421310009\",\n                \"colorCode\": \"0019\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421310009/0019/1.webp?x=quvmz\"\n            },\n            {\n                \"productCode\": \"10002421311002\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421311002/0008/1.webp?x=zvwsz\"\n            },\n            {\n                \"productCode\": \"10002421311010\",\n                \"colorCode\": \"0050\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421311010/0050/1.webp?x=cccev\"\n            },\n            {\n                \"productCode\": \"10002421311010\",\n                \"colorCode\": \"0054\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421311010/0054/1.webp?x=pcquf\"\n            },\n            {\n                \"productCode\": \"10002421314001\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421314001/0008/1.webp?x=uhxsn\"\n            },\n            {\n                \"productCode\": \"10002421314006\",\n                \"colorCode\": \"0006\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421314006/0006/1.webp?x=ztwyo\"\n            },\n            {\n                \"productCode\": \"10002421510002\",\n                \"colorCode\": \"0015\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421510002/0015/1.webp?x=kqevd\"\n            },\n            {\n                \"productCode\": \"10002421511002\",\n                \"colorCode\": \"0312\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421511002/0312/1.webp?x=rmxbx\"\n            },\n            {\n                \"productCode\": \"10002421514006\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421514006/0008/1.webp?x=muizo\"\n            },\n            {\n                \"productCode\": \"10002421514013\",\n                \"colorCode\": \"0006\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421514013/0006/1.webp?x=loqwq\"\n            },\n            {\n                \"productCode\": \"10002421514015\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421514015/0008/1.webp?x=ettim\"\n            },\n            {\n                \"productCode\": \"10002421611005\",\n                \"colorCode\": \"0022\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421611005/0022/1.webp?x=kauhh\"\n            },\n            {\n                \"productCode\": \"10002421614002\",\n                \"colorCode\": \"0317\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421614002/0317/1.webp?x=rmqja\"\n            },\n            {\n                \"productCode\": \"10002421711005\",\n                \"colorCode\": \"0050\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421711005/0050/1.webp?x=opjcs\"\n            },\n            {\n                \"productCode\": \"10002421711007\",\n                \"colorCode\": \"0045\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421711007/0045/1.webp?x=fhguv\"\n            },\n            {\n                \"productCode\": \"10002421810012\",\n                \"colorCode\": \"0015\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421810012/0015/1.webp?x=qgldc\"\n            },\n            {\n                \"productCode\": \"10002422110001\",\n                \"colorCode\": \"0045\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002422110001/0045/1.webp?x=jprpu\"\n            },\n            {\n                \"productCode\": \"10002422111002\",\n                \"colorCode\": \"0037\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002422111002/0037/1.webp?x=fstbl\"\n            },\n            {\n                \"productCode\": \"10002422114002\",\n                \"colorCode\": \"0312\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002422114002/0312/1.webp?x=gwknj\"\n            },\n            {\n                \"productCode\": \"10002422210003\",\n                \"colorCode\": \"0045\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002422210003/0045/1.webp?x=wwcqs\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "200 with filters",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"additionalFilters\": [\r\n    {\r\n      \"id\": \"color\",\r\n      \"value\": \"0008\",\r\n      \"comparisonType\": 0\r\n    }\r\n  ],\r\n  \"page\": 1,\r\n  \"pageSize\": 36\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://maestro-api-dev.secil.biz/Collection/72/GetProductsForConstants",
+									"protocol": "https",
+									"host": [
+										"maestro-api-dev",
+										"secil",
+										"biz"
+									],
+									"path": [
+										"Collection",
+										"72",
+										"GetProductsForConstants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 27 Jan 2025 10:56:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Served-By",
+									"value": "maestro-api-dev.secil.biz"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=gbP6A1MgHj8chmCIZ0%2BjrxhQBs79ZZnojXtLa%2F42SCe8UNYWTc7hOklKCqJh6OyYpPy%2F6KnIJp3OlR75ugfmSJ55LrLbrvC1g85yobeYDDuU%2BjLtVvVsTQabk9RcXVo92Utav10ZvvBUMZLu\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "908837a7b953d13a-CDG"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "server-timing",
+									"value": "cfL4;desc=\"?proto=TCP&rtt=99117&min_rtt=73667&rtt_var=51222&sent=20&recv=20&lost=0&retrans=1&sent_bytes=4463&recv_bytes=3883&delivery_rate=52115&cwnd=36&unsent_bytes=0&cid=370348f8b7c1cb14&ts=10625&x=0\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Başarılı\",\n    \"data\": {\n        \"meta\": {\n            \"page\": 1,\n            \"pageSize\": 36,\n            \"totalProduct\": 145\n        },\n        \"data\": [\n            {\n                \"productCode\": \"10002421011012\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421011012/0008/1.webp?x=tdzfz\"\n            },\n            {\n                \"productCode\": \"10002421011014\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421011014/0008/1.webp?x=lccrl\"\n            },\n            {\n                \"productCode\": \"10002421014003\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014003/0008/1.webp?x=plrqn\"\n            },\n            {\n                \"productCode\": \"10002421014007\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014007/0008/1.webp?x=vczru\"\n            },\n            {\n                \"productCode\": \"10002421110012\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421110012/0008/1.webp?x=muzto\"\n            },\n            {\n                \"productCode\": \"10002421214001\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421214001/0008/1.webp?x=jdfpa\"\n            },\n            {\n                \"productCode\": \"10002421310002\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421310002/0008/1.webp?x=rwldh\"\n            },\n            {\n                \"productCode\": \"10002421311002\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421311002/0008/1.webp?x=zvwsz\"\n            },\n            {\n                \"productCode\": \"10002421314001\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421314001/0008/1.webp?x=uhxsn\"\n            },\n            {\n                \"productCode\": \"10002421514006\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421514006/0008/1.webp?x=muizo\"\n            },\n            {\n                \"productCode\": \"10002421514015\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421514015/0008/1.webp?x=ettim\"\n            },\n            {\n                \"productCode\": \"10002422714002\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002422714002/0008/1.webp?x=oaini\"\n            },\n            {\n                \"productCode\": \"10002422714003\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002422714003/0008/1.webp?x=imqly\"\n            },\n            {\n                \"productCode\": \"10002421010009\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421010009/0008/1.webp?x=lisbj\"\n            },\n            {\n                \"productCode\": \"10002421014006\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014006/0008/1.webp?x=vtvur\"\n            },\n            {\n                \"productCode\": \"10002421111011\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421111011/0008/1.webp?x=ygost\"\n            },\n            {\n                \"productCode\": \"10002421310005\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421310005/0008/1.webp?x=tnffa\"\n            },\n            {\n                \"productCode\": \"10002421311010\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421311010/0008/1.webp?x=ivfxo\"\n            },\n            {\n                \"productCode\": \"10002421511001\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421511001/0008/1.webp?x=usafe\"\n            },\n            {\n                \"productCode\": \"10002421610007\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421610007/0008/1.webp?x=dyfxu\"\n            },\n            {\n                \"productCode\": \"10002421611001\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421611001/0008/1.webp?x=swtjc\"\n            },\n            {\n                \"productCode\": \"10002421614001\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421614001/0008/1.webp?x=fptbo\"\n            },\n            {\n                \"productCode\": \"10002421614002\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421614002/0008/1.webp?x=fzfyu\"\n            },\n            {\n                \"productCode\": \"10002421711005\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421711005/0008/1.webp?x=dccb6\"\n            },\n            {\n                \"productCode\": \"30002421318014\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/30002421318014/0008/1.webp?x=kylvo\"\n            },\n            {\n                \"productCode\": \"10002421010027\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421010027/0008/1.webp?x=oiklb\"\n            },\n            {\n                \"productCode\": \"10002421011008\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421011008/0008/1.webp?x=tlrju\"\n            },\n            {\n                \"productCode\": \"10002421014002\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014002/0008/1.webp?x=uhgnm\"\n            },\n            {\n                \"productCode\": \"10002421014014\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421014014/0008/1.webp?x=ellon\"\n            },\n            {\n                \"productCode\": \"10002421114002\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421114002/0008/1.webp?x=ttcsy\"\n            },\n            {\n                \"productCode\": \"10002421114012\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421114012/0008/1.webp?x=ljhrh\"\n            },\n            {\n                \"productCode\": \"10002421211010\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421211010/0008/1.webp?x=degyh\"\n            },\n            {\n                \"productCode\": \"10002421214004\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421214004/0008/1.webp?x=nrkri\"\n            },\n            {\n                \"productCode\": \"10002421310004\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421310004/0008/1.webp?x=hvkys\"\n            },\n            {\n                \"productCode\": \"10002421314002\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421314002/0008/1.webp?x=dhowz\"\n            },\n            {\n                \"productCode\": \"10002421314003\",\n                \"colorCode\": \"0008\",\n                \"name\": null,\n                \"outOfStock\": false,\n                \"isSaleB2B\": true,\n                \"imageUrl\": \"https://cdn.secilstore.com/docs/images/product/orj/10002421314003/0008/1.webp?x=jvwne\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetFilters",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXM2FoRC1EZE95VHhOYWRud3R2SjZjQk9wSUsxc0x0QjVhQTlvaElUZVprIn0.eyJleHAiOjE3MzgwMDM5MTgsImlhdCI6MTczNzk3NTExOCwianRpIjoiMTIwYTdmOWEtMmMwOC00MDM0LTk5N2UtYjQxMDYyY2Y1ZTI2IiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL25lYmltIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjM0NDRhYjMxLWY1NTEtNDFiOC04NGMxLTM0OWViNDBjZTAyOSIsInR5cCI6IkJlYXJlciIsImF6cCI6InNlY2lsc3RvcmUiLCJzaWQiOiJiNzk4NTcxMS1jYjhjLTQ0NmEtODYwMi1hNWE2NTYyMDg4NDciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInNjb3BlIjoib3BlbmlkIGVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJGcm9udGVuZCBEZXZlbG9wZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJmcm9udGVuZHRhc2tAc2VjaWxzdG9yZS5jb20iLCJnaXZlbl9uYW1lIjoiRnJvbnRlbmQiLCJmYW1pbHlfbmFtZSI6IkRldmVsb3BlciIsImVtYWlsIjoiZnJvbnRlbmR0YXNrQHNlY2lsc3RvcmUuY29tIn0.TmCkAdan1WWlo1qVarjakpPZNBexCcXut18zqhpK9aHJB3R2_CNYFVSSY1WcqZ0cIhGr5IxCse4WjWCd9lrk5IN1jEYxOcI5tbdWdhl1MtluUlB-bWKbTVKZovI1Xdr-4bejjLT-gHMO_8pCTPLhIPAWsdK8K5krFllFG--UWyKJ6vVgbVhIrmqDP47O0iNt9bhtik6iLgFoTnjO0Juolw78sQgbKdq79RUFm7lRkUGE4uCQInCOWwkqjL-76VLCwRQP5CHA4IcVuWL1DOt6x35ljwhO9BeLa4iapnzLPypsJMpeU5iYhp65B04yj8k46X_T4TJTKrp_pfrbO0n8Sg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maestro-api-dev.secil.biz/Collection/72/GetFiltersForConstants",
+							"protocol": "https",
+							"host": [
+								"maestro-api-dev",
+								"secil",
+								"biz"
+							],
+							"path": [
+								"Collection",
+								"72",
+								"GetFiltersForConstants"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://maestro-api-dev.secil.biz/Collection/72/GetFiltersForConstants",
+									"protocol": "https",
+									"host": [
+										"maestro-api-dev",
+										"secil",
+										"biz"
+									],
+									"path": [
+										"Collection",
+										"72",
+										"GetFiltersForConstants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 27 Jan 2025 10:57:27 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Served-By",
+									"value": "maestro-api-dev.secil.biz"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=lc5FTnQIo9kj%2B4TS6NgKupw7R6LH0DMKgWWVSfFqqqXmYv0x6lptl2uE9n9daqD0WmrgLBJfJzci%2FAfb2rMKQDY8Zl5meqa5jRv0P3YZAPEHzzMybJuaWNnXlWzR1IIn0DvQVZtBNHwjpM3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "908838cd1a7fd13a-CDG"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "server-timing",
+									"value": "cfL4;desc=\"?proto=TCP&rtt=104068&min_rtt=73667&rtt_var=40713&sent=67&recv=66&lost=0&retrans=1&sent_bytes=6106&recv_bytes=5323&delivery_rate=52115&cwnd=36&unsent_bytes=0&cid=370348f8b7c1cb14&ts=58796&x=0\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Başarılı\",\n    \"data\": [\n        {\n            \"id\": \"color\",\n            \"title\": \"Renk\",\n            \"values\": [\n                {\n                    \"value\": \"0008\",\n                    \"valueName\": \"Siyah\"\n                },\n                {\n                    \"value\": \"0015\",\n                    \"valueName\": \"Ekru\"\n                },\n                {\n                    \"value\": \"0045\",\n                    \"valueName\": \"Lacivert\"\n                },\n                {\n                    \"value\": \"0037\",\n                    \"valueName\": \"Bej\"\n                },\n                {\n                    \"value\": \"0000\",\n                    \"valueName\": \"Mavi\"\n                },\n                {\n                    \"value\": \"0032\",\n                    \"valueName\": \"Beyaz\"\n                },\n                {\n                    \"value\": \"0006\",\n                    \"valueName\": \"Yeşil\"\n                },\n                {\n                    \"value\": \"0023\",\n                    \"valueName\": \"Gri\"\n                },\n                {\n                    \"value\": \"0009\",\n                    \"valueName\": \"Kırmızı\"\n                },\n                {\n                    \"value\": \"0005\",\n                    \"valueName\": \"Sarı\"\n                },\n                {\n                    \"value\": \"0312\",\n                    \"valueName\": \"Camel\"\n                },\n                {\n                    \"value\": \"0004\",\n                    \"valueName\": \"Fuşya\"\n                },\n                {\n                    \"value\": \"0039\",\n                    \"valueName\": \"Lila\"\n                },\n                {\n                    \"value\": \"0019\",\n                    \"valueName\": \"Pembe\"\n                },\n                {\n                    \"value\": \"0024\",\n                    \"valueName\": \"Sax\"\n                },\n                {\n                    \"value\": \"0050\",\n                    \"valueName\": \"Haki\"\n                },\n                {\n                    \"value\": \"0311\",\n                    \"valueName\": \"Turuncu\"\n                },\n                {\n                    \"value\": \"0021\",\n                    \"valueName\": \"Mint\"\n                },\n                {\n                    \"value\": \"0022\",\n                    \"valueName\": \"Pudra\"\n                },\n                {\n                    \"value\": \"0137\",\n                    \"valueName\": \"Krem\"\n                },\n                {\n                    \"value\": \"0317\",\n                    \"valueName\": \"Kahverengi\"\n                },\n                {\n                    \"value\": \"0339\",\n                    \"valueName\": \"Lacivert Jean\"\n                },\n                {\n                    \"value\": \"0054\",\n                    \"valueName\": \"Bordo\"\n                },\n                {\n                    \"value\": \"0069\",\n                    \"valueName\": \"Olive\"\n                },\n                {\n                    \"value\": \"0134\",\n                    \"valueName\": \"Yavruağzı\"\n                },\n                {\n                    \"value\": \"0011\",\n                    \"valueName\": \"Koyu Yeşil\"\n                },\n                {\n                    \"value\": \"0012\",\n                    \"valueName\": \"Gold\"\n                },\n                {\n                    \"value\": \"0035\",\n                    \"valueName\": \"Nar Çiçeği\"\n                },\n                {\n                    \"value\": \"0036\",\n                    \"valueName\": \"Antrasit\"\n                },\n                {\n                    \"value\": \"0044\",\n                    \"valueName\": \"Ten\"\n                },\n                {\n                    \"value\": \"0048\",\n                    \"valueName\": \"İndigo\"\n                },\n                {\n                    \"value\": \"0049\",\n                    \"valueName\": \"Vizon\"\n                },\n                {\n                    \"value\": \"0053\",\n                    \"valueName\": \"Taba\"\n                },\n                {\n                    \"value\": \"0002\",\n                    \"valueName\": \"Mor\"\n                },\n                {\n                    \"value\": \"0018\",\n                    \"valueName\": \"Mercan\"\n                },\n                {\n                    \"value\": \"0020\",\n                    \"valueName\": \"Turkuaz\"\n                },\n                {\n                    \"value\": \"0033\",\n                    \"valueName\": \"Mürdüm\"\n                },\n                {\n                    \"value\": \"0070\",\n                    \"valueName\": \"Kiremit\"\n                },\n                {\n                    \"value\": \"0117\",\n                    \"valueName\": \"Silver\"\n                },\n                {\n                    \"value\": \"0337\",\n                    \"valueName\": \"Mavi-Jean\"\n                },\n                {\n                    \"value\": \"0056\",\n                    \"valueName\": \"Somon\"\n                },\n                {\n                    \"value\": \"0084\",\n                    \"valueName\": \"Gümüş\"\n                },\n                {\n                    \"value\": \"0091\",\n                    \"valueName\": \"K.Yeşil\"\n                },\n                {\n                    \"value\": \"0316\",\n                    \"valueName\": \"Bakır\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"size\",\n            \"title\": \"Beden\",\n            \"values\": [\n                {\n                    \"value\": \"52\",\n                    \"valueName\": null\n                },\n                {\n                    \"value\": \"Std\",\n                    \"valueName\": \"Std\"\n                },\n                {\n                    \"value\": \"XS\",\n                    \"valueName\": \"XS\"\n                },\n                {\n                    \"value\": \"S\",\n                    \"valueName\": \"S\"\n                },\n                {\n                    \"value\": \"M\",\n                    \"valueName\": \"M\"\n                },\n                {\n                    \"value\": \"L\",\n                    \"valueName\": \"L\"\n                },\n                {\n                    \"value\": \"XL\",\n                    \"valueName\": \"XL\"\n                },\n                {\n                    \"value\": \"36\",\n                    \"valueName\": \"36\"\n                },\n                {\n                    \"value\": \"37\",\n                    \"valueName\": \"37\"\n                },\n                {\n                    \"value\": \"38\",\n                    \"valueName\": \"38\"\n                },\n                {\n                    \"value\": \"39\",\n                    \"valueName\": \"39\"\n                },\n                {\n                    \"value\": \"40\",\n                    \"valueName\": \"40\"\n                },\n                {\n                    \"value\": \"42\",\n                    \"valueName\": \"42\"\n                },\n                {\n                    \"value\": \"44\",\n                    \"valueName\": \"44\"\n                },\n                {\n                    \"value\": \"46\",\n                    \"valueName\": \"46\"\n                },\n                {\n                    \"value\": \"48\",\n                    \"valueName\": \"48\"\n                },\n                {\n                    \"value\": \"50\",\n                    \"valueName\": \"50\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"category\",\n            \"title\": \"Kategori\",\n            \"values\": [\n                {\n                    \"value\": \"3000200260\",\n                    \"valueName\": \"Abiye\"\n                },\n                {\n                    \"value\": \"1000300115\",\n                    \"valueName\": \"Gömlek\"\n                },\n                {\n                    \"value\": \"1000300113\",\n                    \"valueName\": \"Elbise\"\n                },\n                {\n                    \"value\": \"1000300510\",\n                    \"valueName\": \"Pantolon\"\n                },\n                {\n                    \"value\": \"1000300118\",\n                    \"valueName\": \"Bluz\"\n                },\n                {\n                    \"value\": \"1000300112\",\n                    \"valueName\": \"Tunik\"\n                },\n                {\n                    \"value\": \"1000300611\",\n                    \"valueName\": \"Ceket\"\n                },\n                {\n                    \"value\": \"1000300516\",\n                    \"valueName\": \"Etek\"\n                },\n                {\n                    \"value\": \"1000300722\",\n                    \"valueName\": \"Jean\"\n                },\n                {\n                    \"value\": \"1000300625\",\n                    \"valueName\": \"Kap\"\n                },\n                {\n                    \"value\": \"1000300123\",\n                    \"valueName\": \"Sweatshirt\"\n                },\n                {\n                    \"value\": \"1000300621\",\n                    \"valueName\": \"Trenç-Kot\"\n                },\n                {\n                    \"value\": \"1000300124\",\n                    \"valueName\": \"T-Shirt\"\n                },\n                {\n                    \"value\": \"1000300317\",\n                    \"valueName\": \"Triko\"\n                },\n                {\n                    \"value\": \"2000100128\",\n                    \"valueName\": \"Top\"\n                },\n                {\n                    \"value\": \"1000300827\",\n                    \"valueName\": \"Takım\"\n                },\n                {\n                    \"value\": \"1000300129\",\n                    \"valueName\": \"Tulum\"\n                },\n                {\n                    \"value\": \"1000300626\",\n                    \"valueName\": \"Pardösü\"\n                },\n                {\n                    \"value\": \"1000300620\",\n                    \"valueName\": \"Kaban\"\n                },\n                {\n                    \"value\": \"1000400430\",\n                    \"valueName\": \"Çanta\"\n                },\n                {\n                    \"value\": \"3000200432\",\n                    \"valueName\": \"Ayakkabı\"\n                },\n                {\n                    \"value\": \"3000300113\",\n                    \"valueName\": \"Elbise\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"1\",\n            \"title\": \"Ürün Alt Grubu\",\n            \"values\": [\n                {\n                    \"value\": \"0001000109\",\n                    \"valueName\": \"Günlük Bluz\"\n                },\n                {\n                    \"value\": \"0001000110\",\n                    \"valueName\": \"Şık Bluz\"\n                },\n                {\n                    \"value\": \"0001000111\",\n                    \"valueName\": \"Günlük Gömlek\"\n                },\n                {\n                    \"value\": \"0001000112\",\n                    \"valueName\": \"Şık Gömlek\"\n                },\n                {\n                    \"value\": \"0001000116\",\n                    \"valueName\": \"Şık Elbise\"\n                },\n                {\n                    \"value\": \"0001000117\",\n                    \"valueName\": \"Günlük Elibise\"\n                },\n                {\n                    \"value\": \"0001000125\",\n                    \"valueName\": \"Şık Ceket\"\n                },\n                {\n                    \"value\": \"0001000126\",\n                    \"valueName\": \"Yelek\"\n                },\n                {\n                    \"value\": \"0001000127\",\n                    \"valueName\": \"Günlük Ceket\"\n                },\n                {\n                    \"value\": \"0001000129\",\n                    \"valueName\": \"Pliseli Etek\"\n                },\n                {\n                    \"value\": \"0001000130\",\n                    \"valueName\": \"Günlük Etek\"\n                },\n                {\n                    \"value\": \"0001000131\",\n                    \"valueName\": \"Şık Etek\"\n                },\n                {\n                    \"value\": \"0001000132\",\n                    \"valueName\": \"Günlük Pantolon\"\n                },\n                {\n                    \"value\": \"0001000134\",\n                    \"valueName\": \"Eşofman Altı\"\n                },\n                {\n                    \"value\": \"0001000136\",\n                    \"valueName\": \"Klasik Pantolon\"\n                },\n                {\n                    \"value\": \"0001000138\",\n                    \"valueName\": \"Jean Ceket\"\n                },\n                {\n                    \"value\": \"0001000146\",\n                    \"valueName\": \"Günlük Tunik\"\n                },\n                {\n                    \"value\": \"0001000180\",\n                    \"valueName\": \"Şık Tunik\"\n                },\n                {\n                    \"value\": \"0001000182\",\n                    \"valueName\": \"Günlük Kap\"\n                },\n                {\n                    \"value\": \"0001000200\",\n                    \"valueName\": \"Abiye Elbise\"\n                },\n                {\n                    \"value\": \"0001000202\",\n                    \"valueName\": \"Abiye Tulum\"\n                },\n                {\n                    \"value\": \"0001000204\",\n                    \"valueName\": \"Bra\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"22\",\n            \"title\": \"Aksesuar Türü\",\n            \"values\": [\n                {\n                    \"value\": \"0000220012\",\n                    \"valueName\": \"Kemer\"\n                },\n                {\n                    \"value\": \"0000220014\",\n                    \"valueName\": \"Kuşak\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"26\",\n            \"title\": \"Astar\",\n            \"values\": [\n                {\n                    \"value\": \"0000260010\",\n                    \"valueName\": \"Astarlı\"\n                },\n                {\n                    \"value\": \"0000260011\",\n                    \"valueName\": \"Astarsız\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"19\",\n            \"title\": \"Bel\",\n            \"values\": [\n                {\n                    \"value\": \"0000190010\",\n                    \"valueName\": \"Beli Yarım Lastikli\"\n                },\n                {\n                    \"value\": \"0000190013\",\n                    \"valueName\": \"Yüksek\"\n                },\n                {\n                    \"value\": \"0000190015\",\n                    \"valueName\": \"Beli Büzgülü\"\n                },\n                {\n                    \"value\": \"0000190016\",\n                    \"valueName\": \"Lastik Bel\"\n                },\n                {\n                    \"value\": \"0000190020\",\n                    \"valueName\": \"Bele Oturan\"\n                },\n                {\n                    \"value\": \"0000190021\",\n                    \"valueName\": \"Beli Lastikli\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"16\",\n            \"title\": \"Boy\",\n            \"values\": [\n                {\n                    \"value\": \"0000160010\",\n                    \"valueName\": \"Basen\"\n                },\n                {\n                    \"value\": \"0000160011\",\n                    \"valueName\": \"Basen Altı\"\n                },\n                {\n                    \"value\": \"0000160012\",\n                    \"valueName\": \"Bel\"\n                },\n                {\n                    \"value\": \"0000160013\",\n                    \"valueName\": \"Bilek\"\n                },\n                {\n                    \"value\": \"0000160014\",\n                    \"valueName\": \"Diz Altı\"\n                },\n                {\n                    \"value\": \"0000160016\",\n                    \"valueName\": \"Diz Üstü\"\n                },\n                {\n                    \"value\": \"0000160018\",\n                    \"valueName\": \"Maksi\"\n                },\n                {\n                    \"value\": \"0000160019\",\n                    \"valueName\": \"Midi\"\n                },\n                {\n                    \"value\": \"0000160020\",\n                    \"valueName\": \"Mini\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"3\",\n            \"title\": \"Etİket Markasi\",\n            \"values\": [\n                {\n                    \"value\": \"0000300010\",\n                    \"valueName\": \"Seçil\"\n                },\n                {\n                    \"value\": \"0000300011\",\n                    \"valueName\": \"S C L\"\n                },\n                {\n                    \"value\": \"0000300014\",\n                    \"valueName\": \"Gala-Xi\"\n                },\n                {\n                    \"value\": \"0000300016\",\n                    \"valueName\": \"Ilmio\"\n                },\n                {\n                    \"value\": \"0000300017\",\n                    \"valueName\": \"Ilmio Cocktail\"\n                },\n                {\n                    \"value\": \"0000300020\",\n                    \"valueName\": \"Fonclo\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"11\",\n            \"title\": \"Kesİm\",\n            \"values\": [\n                {\n                    \"value\": \"0000110010\",\n                    \"valueName\": \"A Kesim\"\n                },\n                {\n                    \"value\": \"0000110011\",\n                    \"valueName\": \"Oversıze\"\n                },\n                {\n                    \"value\": \"0000110012\",\n                    \"valueName\": \"Relax\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"18\",\n            \"title\": \"Kol\",\n            \"values\": [\n                {\n                    \"value\": \"0000180011\",\n                    \"valueName\": \"Düşük\"\n                },\n                {\n                    \"value\": \"0000180013\",\n                    \"valueName\": \"Kısa\"\n                },\n                {\n                    \"value\": \"0000180014\",\n                    \"valueName\": \"Kolsuz\"\n                },\n                {\n                    \"value\": \"0000180017\",\n                    \"valueName\": \"Reglan\"\n                },\n                {\n                    \"value\": \"0000180018\",\n                    \"valueName\": \"Tek Omuz\"\n                },\n                {\n                    \"value\": \"0000180019\",\n                    \"valueName\": \"Truvakar\"\n                },\n                {\n                    \"value\": \"0000180020\",\n                    \"valueName\": \"Uzun\"\n                },\n                {\n                    \"value\": \"0000180021\",\n                    \"valueName\": \"Yarasa\"\n                },\n                {\n                    \"value\": \"0000180023\",\n                    \"valueName\": \"Askılı\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"23\",\n            \"title\": \"Kumaş\",\n            \"values\": [\n                {\n                    \"value\": \"0000230012\",\n                    \"valueName\": \"Dantel\"\n                },\n                {\n                    \"value\": \"0000230023\",\n                    \"valueName\": \"Jarse\"\n                },\n                {\n                    \"value\": \"0000230028\",\n                    \"valueName\": \"Keten\"\n                },\n                {\n                    \"value\": \"0000230035\",\n                    \"valueName\": \"Jakar\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"24\",\n            \"title\": \"Kumaş Özellİğİ\",\n            \"values\": [\n                {\n                    \"value\": \"0000240012\",\n                    \"valueName\": \"Çiçek\"\n                },\n                {\n                    \"value\": \"0000240013\",\n                    \"valueName\": \"Çizgili\"\n                },\n                {\n                    \"value\": \"0000240014\",\n                    \"valueName\": \"Desenli\"\n                },\n                {\n                    \"value\": \"0000240043\",\n                    \"valueName\": \"Sim\"\n                },\n                {\n                    \"value\": \"0000240045\",\n                    \"valueName\": \"Nakış\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"15\",\n            \"title\": \"Model\",\n            \"values\": [\n                {\n                    \"value\": \"0000150032\",\n                    \"valueName\": \"Havuç\"\n                },\n                {\n                    \"value\": \"0000150043\",\n                    \"valueName\": \"Piliseli\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"14\",\n            \"title\": \"Okasyon\",\n            \"values\": [\n                {\n                    \"value\": \"0000140012\",\n                    \"valueName\": \"Ofis\"\n                },\n                {\n                    \"value\": \"0000140014\",\n                    \"valueName\": \"Söz & Nişan\"\n                },\n                {\n                    \"value\": \"0000140016\",\n                    \"valueName\": \"After Party\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"20\",\n            \"title\": \"Paça Etek\",\n            \"values\": [\n                {\n                    \"value\": \"0000200010\",\n                    \"valueName\": \"Dar\"\n                },\n                {\n                    \"value\": \"0000200012\",\n                    \"valueName\": \"Geniş\"\n                },\n                {\n                    \"value\": \"0000200015\",\n                    \"valueName\": \"Yırtmaç\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"6\",\n            \"title\": \"Sezon\",\n            \"values\": [\n                {\n                    \"value\": \"0000060000\",\n                    \"valueName\": \"Sezonsuz\"\n                },\n                {\n                    \"value\": \"0000060001\",\n                    \"valueName\": \"Yaz\"\n                },\n                {\n                    \"value\": \"0000060002\",\n                    \"valueName\": \"Kış\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"13\",\n            \"title\": \"Tarz\",\n            \"values\": [\n                {\n                    \"value\": \"0000130010\",\n                    \"valueName\": \"Günlük\"\n                },\n                {\n                    \"value\": \"0000130014\",\n                    \"valueName\": \"Şık\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"12\",\n            \"title\": \"Ürün Türü\",\n            \"values\": [\n                {\n                    \"value\": \"0001200101\",\n                    \"valueName\": \"Nitelikli\"\n                },\n                {\n                    \"value\": \"0001200102\",\n                    \"valueName\": \"Koleksiyon\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"17\",\n            \"title\": \"Yaka\",\n            \"values\": [\n                {\n                    \"value\": \"0000170011\",\n                    \"valueName\": \"Asimetrik\"\n                },\n                {\n                    \"value\": \"0000170013\",\n                    \"valueName\": \"Ceket Yaka\"\n                },\n                {\n                    \"value\": \"0000170014\",\n                    \"valueName\": \"Degaje Yaka\"\n                },\n                {\n                    \"value\": \"0000170015\",\n                    \"valueName\": \"Dik Yaka\"\n                },\n                {\n                    \"value\": \"0000170016\",\n                    \"valueName\": \"Fular Yakalı\"\n                },\n                {\n                    \"value\": \"0000170017\",\n                    \"valueName\": \"Gömlek Yaka\"\n                },\n                {\n                    \"value\": \"0000170018\",\n                    \"valueName\": \"Hakim Yaka\"\n                },\n                {\n                    \"value\": \"0000170019\",\n                    \"valueName\": \"Halter Yaka\"\n                },\n                {\n                    \"value\": \"0000170020\",\n                    \"valueName\": \"Kalp Yaka\"\n                },\n                {\n                    \"value\": \"0000170022\",\n                    \"valueName\": \"Kare Yaka\"\n                },\n                {\n                    \"value\": \"0000170024\",\n                    \"valueName\": \"Kırlangıç Yaka\"\n                },\n                {\n                    \"value\": \"0000170025\",\n                    \"valueName\": \"Kruvaze Yaka\"\n                },\n                {\n                    \"value\": \"0000170028\",\n                    \"valueName\": \"Sıfır Yaka\"\n                },\n                {\n                    \"value\": \"0000170029\",\n                    \"valueName\": \"Straplez\"\n                },\n                {\n                    \"value\": \"0000170033\",\n                    \"valueName\": \"V Yaka\"\n                },\n                {\n                    \"value\": \"0000170036\",\n                    \"valueName\": \"Yuvarlak Yaka\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"5\",\n            \"title\": \"Yil\",\n            \"values\": [\n                {\n                    \"value\": \"0000500024\",\n                    \"valueName\": \"2024\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        },\n        {\n            \"id\": \"stock\",\n            \"title\": \"Stok\",\n            \"values\": [\n                {\n                    \"value\": \"\",\n                    \"valueName\": \"Büyüktür\"\n                },\n                {\n                    \"value\": \"\",\n                    \"valueName\": \"Küçüktür\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 3\n        },\n        {\n            \"id\": \"warehouse\",\n            \"title\": \"Depo\",\n            \"values\": [\n                {\n                    \"value\": \"14102\",\n                    \"valueName\": \"ALEMDAR\"\n                },\n                {\n                    \"value\": \"10604\",\n                    \"valueName\": \"ANK IZMIR CAD\"\n                },\n                {\n                    \"value\": \"13408\",\n                    \"valueName\": \"ATLASPARK\"\n                },\n                {\n                    \"value\": \"20602-1\",\n                    \"valueName\": \"BGR TEKSTİL BALGAT ARA DEPO\"\n                },\n                {\n                    \"value\": \"22501-1\",\n                    \"valueName\": \"ERBOL ERZURUM ARA DEPO\"\n                },\n                {\n                    \"value\": \"22801\",\n                    \"valueName\": \"GIRESUN\"\n                },\n                {\n                    \"value\": \"1-3-105\",\n                    \"valueName\": \"GÜRSES KONSİNYE DEPO\"\n                },\n                {\n                    \"value\": \"22401-1\",\n                    \"valueName\": \"İSHAK AKBİNA ERZİNCAN\"\n                },\n                {\n                    \"value\": \"1-3-250\",\n                    \"valueName\": \"JEFER KONSİNYE DEPO\"\n                },\n                {\n                    \"value\": \"20601-1\",\n                    \"valueName\": \"KARUM İLMİO EMİNE ORAN\"\n                },\n                {\n                    \"value\": \"KY001\",\n                    \"valueName\": \"Kayıp Depo\"\n                },\n                {\n                    \"value\": \"1-M-1\",\n                    \"valueName\": \"Merkez Ofis Deposu 1\"\n                },\n                {\n                    \"value\": \"23701-1\",\n                    \"valueName\": \"MODA MAĞAZA ARA DEPO\"\n                },\n                {\n                    \"value\": \"24201-C\",\n                    \"valueName\": \"NOVALAND ÇADIR\"\n                },\n                {\n                    \"value\": \"13405\",\n                    \"valueName\": \"SANTRAL\"\n                },\n                {\n                    \"value\": \"20701-1\",\n                    \"valueName\": \"SELF DANIŞMANLIK ALANYA ARA DEPO\"\n                },\n                {\n                    \"value\": \"13401\",\n                    \"valueName\": \"UMRANIYE\"\n                },\n                {\n                    \"value\": \"16501\",\n                    \"valueName\": \"VAN AVM\"\n                },\n                {\n                    \"value\": \"20701\",\n                    \"valueName\": \"YEKTAMALL\"\n                }\n            ],\n            \"currency\": null,\n            \"comparisonType\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
