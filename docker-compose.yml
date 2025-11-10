@@ -4,12 +4,8 @@ services:
     container_name: koleksiyon-panel
     ports:
       - "3000:3000"
-    environment:
-      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET:-dev-secret}
-      NEXTAUTH_URL: ${NEXTAUTH_URL:-http://localhost:3000}
-      API_BASE_URL: ${API_BASE_URL:-https://maestro-api-dev.secil.biz}
-      MAESTRO_SECRET_TOKEN: ${MAESTRO_SECRET_TOKEN:-set-me}
     env_file:
       - .env.local
+      
     command: npm run start
     restart: unless-stopped
