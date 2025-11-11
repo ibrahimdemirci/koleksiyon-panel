@@ -163,7 +163,7 @@ export default async function EditCollectionPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-indigo-100">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-10" style={{ maxWidth: "95rem" }}>
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 container-7xl">
         <div className="rounded-3xl border border-white/60 bg-white/80 px-8 py-6 shadow-xl shadow-slate-900/10 backdrop-blur">
           <span className="inline-flex items-center gap-2 rounded-full bg-indigo-100 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-700">
             Koleksiyon #{id}
@@ -173,7 +173,7 @@ export default async function EditCollectionPage({
           </h1>
           <p className="mt-2 max-w-2xl text-sm text-slate-600">
             Ürünleri sürükleyip bırakarak sıralayın, filtreleri uygulayın ve
-            kaydet butonuna basmadan önce oluşan payload&apos;ı görüntüleyin.
+            kaydet butonuna basın.
           </p>
           <a
             href="/collections"

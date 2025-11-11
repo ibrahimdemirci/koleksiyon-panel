@@ -36,15 +36,10 @@ export async function GET(
       },
     );
 
-    console.log(
-      "🔍 [filters route] raw maestro response:",
-      JSON.stringify(apiRes, null, 2),
-    );
-
     const filters = Array.isArray(apiRes?.data) ? apiRes.data! : [];
     return NextResponse.json(filters, { status: 200 });
   } catch (error) {
-    console.error("❌ [filters route] failed", error);
+    console.error("[filters route] failed", error);
     return NextResponse.json([], { status: 200 });
   }
 }

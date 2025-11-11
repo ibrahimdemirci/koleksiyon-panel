@@ -42,7 +42,6 @@ async function fetchCollections(): Promise<MaestroCollection[]> {
     return [];
   }
 
-  // BURAYA DİKKAT: API artık { data: [...] } dönüyor
   const json = (await response.json()) as CollectionsApiResponse;
   const collections = Array.isArray(json.data) ? json.data : [];
   
@@ -75,7 +74,7 @@ export default async function CollectionsPage() {
           </div>
           <SignOutButton />
         </div>
-        <div className="rounded-3xl border border-white/60 bg-white/80 p-6 shadow-xl shadow-slate-900/10 backdrop-blur">
+        <div className="rounded-3xl ">
           <CollectionsTable collections={collections} />
         </div>
       </div>

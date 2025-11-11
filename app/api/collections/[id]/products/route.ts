@@ -58,14 +58,8 @@ export async function POST(
       {
         method: "POST",
         token: accessToken,
-        // senin ilk kodundaki gibi string gönderelim
         body: JSON.stringify(payload),
       },
-    );
-    
-    console.log(
-      "🔍 [products route] maestro response for id=" + id,
-      JSON.stringify(apiRes, null, 2),
     );
 
     let products: unknown[] = [];
@@ -86,12 +80,11 @@ export async function POST(
       }
     }
 
-    // FE sadece array alsın
+    
     return NextResponse.json(products, { status: 200 });
   } catch (error) {
-    // burada 500’ü yutuyoruz ki sayfa açılabilsin
     console.error(
-      "❌ [products route] failed for collection id=" + id,
+      "[products route] failed for collection id=" + id,
       error,
     );
     return NextResponse.json([], { status: 200 });
