@@ -474,7 +474,18 @@ export function EditWorkspace({
         ) : null}
         {renderProductMedia(imageUrl, title)}
         <div className="flex flex-col gap-1">
-          <span className="text-sm font-semibold text-slate-900">{title}</span>
+          <span
+            className="text-sm font-semibold text-slate-900 leading-snug"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+            title={title}
+          >
+            {title}
+          </span>
           <span className="text-xs font-medium text-slate-500">{code}</span>
         </div>
       </article>
@@ -497,7 +508,18 @@ export function EditWorkspace({
       <article className="group flex h-full flex-col gap-3 rounded-2xl border border-slate-200/80 bg-white/95 p-4 shadow-md shadow-slate-900/10 ring-1 ring-transparent transition hover:-translate-y-0.5 hover:shadow-xl hover:ring-indigo-200">
         {renderProductMedia(imageUrl, title)}
         <div className="flex flex-col gap-1">
-          <span className="text-sm font-semibold text-slate-900">{title}</span>
+          <span
+            className="text-sm font-semibold text-slate-900 leading-snug"
+            style={{
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+            title={title}
+          >
+            {title}
+          </span>
           <span className="text-xs font-medium text-slate-500">{code}</span>
         </div>
       </article>
